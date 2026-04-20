@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELUME - 智能光疗穿戴设备研发生产商</title>
+    <!-- 引入外部资源 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- 自定义样式 + 炫酷动效 -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #000;
+            color: #fff;
+        }
+        /* 导航栏滚动动效 */
+        .nav-scrolled {
+            background-color: rgba(0,0,0,0.95);
+            box-shadow: 0 4px 20px rgba(255, 107, 0, 0.1);
+        }
+        /* 悬停缩放动效 */
+        .hover-scale { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .hover-scale:hover { transform: scale(1.05); }
+        /* 渐变文字 */
+        .text-gradient {
+            background: linear-gradient(90deg, #ff6b00, #ff9500);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        /* 按钮动效 */
+        .btn-primary {
+            background: linear-gradient(90deg, #ff6b00, #ff9500);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.6s ease;
+        }
+        .btn-primary:hover::after {
+            left: 100%;
+        }
+        /* 产品卡片动效 */
+        .product-card {
+            transition: all 0.5s ease;
+            border: 1px solid rgba(255, 107, 0, 0.2);
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: #ff6b00;
+            box-shadow: 0 20px 40px rgba(255, 107, 0, 0.2);
+        }
+        /* 轮播指示器自定义 */
+        .swiper-pagination-bullet {
+            background: #666;
+            opacity: 1;
+        }
+        .swiper-pagination-bullet-active {
+            background: #ff6b00;
+            width: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+<!-- 导航栏 -->
+<header id="navbar" class="fixed w-full top-0 z-50 py-4 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-bold text-gradient">ELUME</a>
+        <nav class="hidden md:flex gap-8 items-center">
+            <a href="index.html" class="font-medium hover:text-orange-500 transition">首页</a>
+            <a href="product.html" class="font-medium hover:text-orange-500 transition">产品中心</a>
+            <a href="technology.html" class="font-medium hover:text-orange-500 transition">核心技术</a>
+            <a href="cases.html" class="font-medium hover:text-orange-500 transition">用户案例</a>
+            <a href="about.html" class="font-medium hover:text-orange-500 transition">关于我们</a>
+            <a href="contact.html" class="btn-primary px-6 py-2 rounded-full font-medium">立即咨询</a>
+        </nav>
+        <!-- 移动端菜单按钮 -->
+        <button class="md:hidden text-white text-2xl">
+            <i class="fa fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<!-- 首页轮播banner -->
+<section class="pt-24 md:pt-0 min-h-screen flex items-center">
+    <div class="swiper hero-swiper w-full h-full">
+        <div class="swiper-wrapper">
+            <!-- 轮播1 -->
+            <div class="swiper-slide h-screen flex items-center">
+                <div class="max-w-7xl mx-auto px-4 md:px-8 grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1">
+                        <h1 class="text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold leading-tight mb-6">
+                            光愈随行<br>
+                            <span class="text-gradient">随身护你</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-lg">
+                            新一代可穿戴生物光照仪，专为运动健康打造，随时随地开启专业级肌肉养护。
+                        </p>
+                        <div class="flex gap-4">
+                            <a href="product.html" class="btn-primary px-8 py-3 rounded-full font-medium">
+                                探索产品
+                            </a>
+                            <a href="cases.html" class="border border-orange-500 px-8 py-3 rounded-full font-medium hover:bg-orange-500/10 transition">
+                                查看案例
+                            </a>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2 hover-scale">
+                        <img src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/ea7421dc48394c0eb3df4bfc852c38e9.jpg~tplv-a9rns2rl98-24:720:720.jpg"
+                             alt="ELUME光疗穿戴设备" class="w-full rounded-2xl shadow-2xl">
+                    </div>
+                </div>
+            </div>
+            <!-- 轮播2 -->
+            <div class="swiper-slide h-screen flex items-center bg-zinc-900">
+                <div class="max-w-7xl mx-auto px-4 md:px-8 grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-6">
+                            6大效用<br>
+                            <span class="text-gradient">疏松肌肉不适</span>
+                        </h2>
+                        <ul class="space-y-3 text-lg text-gray-300">
+                            <li class="flex items-center gap-3"><i class="fa fa-check text-orange-500"></i> 抑制炎症因子</li>
+                            <li class="flex items-center gap-3"><i class="fa fa-check text-orange-500"></i> 促进血液循环</li>
+                            <li class="flex items-center gap-3"><i class="fa fa-check text-orange-500"></i> 松弛肌肉紧张</li>
+                            <li class="flex items-center gap-3"><i class="fa fa-check text-orange-500"></i> 促进细胞修复</li>
+                        </ul>
+                        <a href="technology.html" class="inline-block mt-8 btn-primary px-8 py-3 rounded-full font-medium">
+                            了解核心技术
+                        </a>
+                    </div>
+                    <div class="hover-scale">
+                        <img src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/709ede98581f49d490fd5ba2ca3f467e.jpg~tplv-a9rns2rl98-24:720:720.jpg"
+                             alt="6大效用" class="w-full rounded-2xl shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 轮播分页器 -->
+        <div class="swiper-pagination absolute bottom-10 left-0 w-full"></div>
+        <!-- 轮播左右箭头 -->
+        <div class="swiper-button-next text-orange-500 right-8"></div>
+        <div class="swiper-button-prev text-orange-500 left-8"></div>
+    </div>
+</section>
+
+<!-- 核心卖点（首页仅展示3个关键项） -->
+<section class="py-20 bg-zinc-900">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">核心优势</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- 卖点1 -->
+            <div class="product-card bg-zinc-800 p-8 rounded-2xl text-center">
+                <div class="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fa fa-hospital-o text-2xl text-orange-500"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">三甲医院验证</h3>
+                <p class="text-gray-400">知名三甲医院联合功效验证，专业可靠</p>
+            </div>
+            <!-- 卖点2 -->
+            <div class="product-card bg-zinc-800 p-8 rounded-2xl text-center">
+                <div class="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fa fa-bolt text-2xl text-orange-500"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">智能安全防护</h3>
+                <p class="text-gray-400">过热保护、过载断电，全程安心使用</p>
+            </div>
+            <!-- 卖点3 -->
+            <div class="product-card bg-zinc-800 p-8 rounded-2xl text-center">
+                <div class="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fa fa-refresh text-2xl text-orange-500"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">超长续航</h3>
+                <p class="text-gray-400">600mAh大容量电池，满电续航6次</p>
+            </div>
+        </div>
+        <div class="text-center mt-12">
+            <a href="technology.html" class="inline-block border border-orange-500 px-8 py-3 rounded-full font-medium hover:bg-orange-500/10 transition">
+                查看全部优势 <i class="fa fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- 产品展示（首页仅展示款式） -->
+<section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">产品系列</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="product-card bg-zinc-900 p-6 rounded-2xl">
+                <img src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/b974304614c54a279322d864509e7fa3.jpg~tplv-a9rns2rl98-24:720:720.jpg"
+                     alt="美国灰款" class="w-full rounded-xl mb-6">
+                <h3 class="text-xl font-semibold">ELUME 光疗仪 · 美国灰</h3>
+                <p class="text-gray-400 mt-2">专业级运动康复款</p>
+            </div>
+            <div class="product-card bg-zinc-900 p-6 rounded-2xl">
+                <img src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/b974304614c54a279322d864509e7fa3.jpg~tplv-a9rns2rl98-24:720:720.jpg"
+                     alt="爱马仕橙款" class="w-full rounded-xl mb-6">
+                <h3 class="text-xl font-semibold">ELUME 光疗仪 · 爱马仕橙</h3>
+                <p class="text-gray-400 mt-2">时尚便携款</p>
+            </div>
+        </div>
+        <div class="text-center mt-12">
+            <a href="product.html" class="btn-primary px-8 py-3 rounded-full font-medium">
+                查看完整产品详情
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- 底部 -->
+<footer class="bg-zinc-900 py-12 border-t border-zinc-800">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-xl font-bold text-gradient mb-4">ELUME</h3>
+                <p class="text-gray-400 mb-4">专注智能光疗穿戴设备研发生产</p>
+                <div class="flex gap-4 text-gray-400">
+                    <a href="#" class="hover:text-orange-500 transition"><i class="fa fa-weixin text-xl"></i></a>
+                    <a href="#" class="hover:text-orange-500 transition"><i class="fa fa-weibo text-xl"></i></a>
+                    <a href="#" class="hover:text-orange-500 transition"><i class="fa fa-instagram text-xl"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">快速链接</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="index.html" class="hover:text-orange-500 transition">首页</a></li>
+                    <li><a href="product.html" class="hover:text-orange-500 transition">产品中心</a></li>
+                    <li><a href="technology.html" class="hover:text-orange-500 transition">核心技术</a></li>
+                    <li><a href="cases.html" class="hover:text-orange-500 transition">用户案例</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">关于我们</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="about.html" class="hover:text-orange-500 transition">公司介绍</a></li>
+                    <li><a href="contact.html" class="hover:text-orange-500 transition">联系我们</a></li>
+                    <li><a href="#" class="hover:text-orange-500 transition">招贤纳士</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">联系方式</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li class="flex items-center gap-2"><i class="fa fa-phone"></i> 400-123-4567</li>
+                    <li class="flex items-center gap-2"><i class="fa fa-envelope"></i> contact@elume.com</li>
+                    <li class="flex items-center gap-2"><i class="fa fa-map-marker"></i> 上海市浦东新区XX科技园</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-12 pt-8 border-t border-zinc-800 text-center text-gray-500">
+            © 2025 ELUME 光疗科技 版权所有
+        </div>
+    </div>
+</footer>
+
+<!-- JS脚本 -->
+<script>
+    // 导航栏滚动效果
+    window.addEventListener('scroll', function() {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('nav-scrolled');
+        } else {
+            navbar.classList.remove('nav-scrolled');
+        }
+    });
+
+    // 轮播初始化
+    const swiper = new Swiper('.hero-swiper', {
+        direction: 'horizontal',
+        loop: true,
+        speed: 800,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
+</body>
+</html>

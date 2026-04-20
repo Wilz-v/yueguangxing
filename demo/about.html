@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 - ELUME 智能光疗穿戴设备研发生产商</title>
+    <!-- 引入外部资源 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- 自定义样式（复用首页核心样式） -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #000;
+            color: #fff;
+        }
+        /* 导航栏滚动动效 */
+        .nav-scrolled {
+            background-color: rgba(0,0,0,0.95);
+            box-shadow: 0 4px 20px rgba(255, 107, 0, 0.1);
+        }
+        /* 悬停缩放动效 */
+        .hover-scale { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .hover-scale:hover { transform: scale(1.05); }
+        /* 渐变文字 */
+        .text-gradient {
+            background: linear-gradient(90deg, #ff6b00, #ff9500);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        /* 按钮动效 */
+        .btn-primary {
+            background: linear-gradient(90deg, #ff6b00, #ff9500);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.6s ease;
+        }
+        .btn-primary:hover::after {
+            left: 100%;
+        }
+        /* 卡片动效 */
+        .about-card {
+            transition: all 0.5s ease;
+            border: 1px solid rgba(255, 107, 0, 0.2);
+        }
+        .about-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff6b00;
+            box-shadow: 0 10px 30px rgba(255, 107, 0, 0.15);
+        }
+        /* 时间轴样式 */
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            padding-bottom: 3rem;
+        }
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: linear-gradient(to bottom, #ff6b00, transparent);
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background: #ff6b00;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+<!-- 导航栏（和首页保持一致） -->
+<header id="navbar" class="fixed w-full top-0 z-50 py-4 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-bold text-gradient">ELUME</a>
+        <nav class="hidden md:flex gap-8 items-center">
+            <a href="index.html" class="font-medium hover:text-orange-500 transition">首页</a>
+            <a href="product.html" class="font-medium hover:text-orange-500 transition">产品中心</a>
+            <a href="technology.html" class="font-medium hover:text-orange-500 transition">核心技术</a>
+            <a href="cases.html" class="font-medium hover:text-orange-500 transition">用户案例</a>
+            <a href="about.html" class="font-medium text-orange-500">关于我们</a>
+            <a href="contact.html" class="btn-primary px-6 py-2 rounded-full font-medium">立即咨询</a>
+        </nav>
+        <!-- 移动端菜单按钮 -->
+        <button class="md:hidden text-white text-2xl">
+            <i class="fa fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<!-- 页面头部banner -->
+<section class="pt-24 md:pt-0 min-h-[60vh] flex items-center bg-zinc-900">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+        <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-extrabold mb-6">
+            关于 <span class="text-gradient">ELUME</span>
+        </h1>
+        <p class="text-xl text-gray-300 max-w-2xl">
+            我们是一家专注于智能光疗穿戴设备研发、生产与销售的高科技企业，致力于用创新科技为运动健康保驾护航。
+        </p>
+    </div>
+</section>
+
+<!-- 公司简介 -->
+<section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 grid md:grid-cols-2 gap-12 items-center">
+        <div class="hover-scale">
+            <img src="https://p11-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/d716a84c5d2543d8a13e3893b6aaec80.jpg~tplv-a9rns2rl98-24:720:720.jpg"
+                 alt="ELUME公司环境" class="w-full rounded-2xl shadow-2xl">
+        </div>
+        <div>
+            <h2 class="text-3xl font-bold mb-6 text-gradient">公司简介</h2>
+            <p class="text-gray-300 mb-4">
+                ELUME 成立于2018年，总部位于上海浦东新区高科技产业园，是国内首批专注于生物光疗穿戴设备研发的企业之一。
+            </p>
+            <p class="text-gray-300 mb-4">
+                我们汇聚了光学、生物医学、材料科学、工业设计等多领域的顶尖人才，拥有多项自主研发的核心专利技术，产品通过了国家医疗器械相关认证及国际CE、FDA等权威认证。
+            </p>
+            <p class="text-gray-300">
+                自成立以来，ELUME 始终坚持以用户需求为核心，以技术创新为驱动，为全球用户提供安全、有效、便捷的光疗健康解决方案。
+            </p>
+            <div class="mt-8 grid grid-cols-3 gap-4 text-center">
+                <div class="about-card bg-zinc-900 p-4 rounded-xl">
+                    <p class="text-3xl font-bold text-orange-500">80+</p>
+                    <p class="text-gray-400 text-sm mt-2">核心专利</p>
+                </div>
+                <div class="about-card bg-zinc-900 p-4 rounded-xl">
+                    <p class="text-3xl font-bold text-orange-500">50万+</p>
+                    <p class="text-gray-400 text-sm mt-2">全球用户</p>
+                </div>
+                <div class="about-card bg-zinc-900 p-4 rounded-xl">
+                    <p class="text-3xl font-bold text-orange-500">12+</p>
+                    <p class="text-gray-400 text-sm mt-2">合作医院</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 核心团队 -->
+<section class="py-20 bg-zinc-900">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">核心团队</h2>
+        <div class="grid md:grid-cols-4 gap-8">
+            <!-- 团队成员1 -->
+            <div class="about-card bg-zinc-800 p-6 rounded-2xl text-center">
+                <img src="https://p11-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/2c34e99b2f9c4afc978649183d242aea.jpg~tplv-a9rns2rl98-24:720:720.jpg"
+                     alt="张博士" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                <h3 class="text-xl font-semibold">张XX 博士</h3>
+                <p class="text-orange-500 mb-3">创始人 & CEO</p>
+                <p class="text-gray-400 text-sm">
+                    中科院光学工程博士，15年生物光疗领域研究经验，曾任职于某知名医疗设备企业研发总监。
+                </p>
+            </div>
+            <!-- 团队成员2 -->
+            <div class="about-card bg-zinc-800 p-6 rounded-2xl text-center">
+                <img src="https://p3-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/287b0672144d450c9c80ac055eac0b8d.jpg~tplv-a9rns2rl98-24:720:720.jpg"
+                     alt="李教授" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                <h3 class="text-xl font-semibold">李XX 教授</h3>
+                <p class="text-orange-500 mb-3">首席科学家</p>
+                <p class="text-gray-400 text-sm">
+                    上海交通大学医学院教授，博士生导师，专注于运动康复与光生物调节研究。
+                </p>
+            </div>
+            <!-- 团队成员3 -->
+            <div class="about-card bg-zinc-800 p-6 rounded-2xl text-center">
+                <img src="https://p11-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/60b7f63c12804bcaa6a09e5848e33b18.jpg~tplv-a9rns2rl98-24:720:720.jpg"
+                     alt="王总监" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                <h3 class="text-xl font-semibold">王XX</h3>
+                <p class="text-orange-500 mb-3">产品设计总监</p>
+                <p class="text-gray-400 text-sm">
+                    前苹果供应链设计师，拥有多项工业设计大奖，专注于穿戴设备人机工程学设计。
+                </p>
+            </div>
+            <!-- 团队成员4 -->
+            <div class="about-card bg-zinc-800 p-6 rounded-2xl text-center">
+                <img src="https://p3-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/977df676a9d24cadab47fa792c472f5a.jpg~tplv-a9rns2rl98-24:720:720.jpg"
+                     alt="赵经理" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                <h3 class="text-xl font-semibold">赵XX</h3>
+                <p class="text-orange-500 mb-3">市场运营总监</p>
+                <p class="text-gray-400 text-sm">
+                    10年大健康领域市场经验，曾主导多个医疗健康产品的市场推广与品牌建设。
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 发展历程 -->
+<section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">发展历程</h2>
+        <div class="max-w-3xl mx-auto">
+            <!-- 时间轴项1 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3 class="text-xl font-semibold mb-2">2018年 · 公司成立</h3>
+                <p class="text-gray-300">
+                    ELUME 正式成立，聚焦生物光疗技术研发，组建核心研发团队。
+                </p>
+            </div>
+            <!-- 时间轴项2 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3 class="text-xl font-semibold mb-2">2019年 · 技术突破</h3>
+                <p class="text-gray-300">
+                    首款便携式光疗原型机研发成功，获得3项核心发明专利。
+                </p>
+            </div>
+            <!-- 时间轴项3 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3 class="text-xl font-semibold mb-2">2020年 · 产品上市</h3>
+                <p class="text-gray-300">
+                    第一代ELUME光疗穿戴设备正式上市，与3家三甲医院达成临床合作。
+                </p>
+            </div>
+            <!-- 时间轴项4 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3 class="text-xl font-semibold mb-2">2022年 · 市场拓展</h3>
+                <p class="text-gray-300">
+                    产品远销欧美12个国家和地区，累计用户突破30万。
+                </p>
+            </div>
+            <!-- 时间轴项5 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3 class="text-xl font-semibold mb-2">2024年 · 技术升级</h3>
+                <p class="text-gray-300">
+                    推出第三代智能光疗仪，新增AI智能调节功能，获得国际设计大奖。
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 企业使命 -->
+<section class="py-20 bg-zinc-900">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8">企业使命</h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
+            用科技之光，守护运动健康，让每个人都能享受便捷、专业的康复护理。
+        </p>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="about-card bg-zinc-800 p-8 rounded-2xl">
+                <div class="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fa fa-lightbulb-o text-2xl text-orange-500"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">创新</h3>
+                <p class="text-gray-400">持续投入研发，突破技术边界，引领光疗设备创新方向</p>
+            </div>
+            <div class="about-card bg-zinc-800 p-8 rounded-2xl">
+                <div class="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fa fa-heart text-2xl text-orange-500"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">专业</h3>
+                <p class="text-gray-400">依托医学研究，确保产品安全有效，提供专业级健康解决方案</p>
+            </div>
+            <div class="about-card bg-zinc-800 p-8 rounded-2xl">
+                <div class="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fa fa-users text-2xl text-orange-500"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">服务</h3>
+                <p class="text-gray-400">以用户为中心，提供全周期的产品服务和健康咨询</p>
+            </div>
+        </div>
+        <div class="mt-12">
+            <a href="contact.html" class="btn-primary px-8 py-3 rounded-full font-medium">
+                加入我们 <i class="fa fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- 底部（和首页保持一致） -->
+<footer class="bg-zinc-900 py-12 border-t border-zinc-800">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-xl font-bold text-gradient mb-4">ELUME</h3>
+                <p class="text-gray-400 mb-4">专注智能光疗穿戴设备研发生产</p>
+                <div class="flex gap-4 text-gray-400">
+                    <a href="#" class="hover:text-orange-500 transition"><i class="fa fa-weixin text-xl"></i></a>
+                    <a href="#" class="hover:text-orange-500 transition"><i class="fa fa-weibo text-xl"></i></a>
+                    <a href="#" class="hover:text-orange-500 transition"><i class="fa fa-instagram text-xl"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">快速链接</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="index.html" class="hover:text-orange-500 transition">首页</a></li>
+                    <li><a href="product.html" class="hover:text-orange-500 transition">产品中心</a></li>
+                    <li><a href="technology.html" class="hover:text-orange-500 transition">核心技术</a></li>
+                    <li><a href="cases.html" class="hover:text-orange-500 transition">用户案例</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">关于我们</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="about.html" class="hover:text-orange-500 transition">公司介绍</a></li>
+                    <li><a href="contact.html" class="hover:text-orange-500 transition">联系我们</a></li>
+                    <li><a href="#" class="hover:text-orange-500 transition">招贤纳士</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">联系方式</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li class="flex items-center gap-2"><i class="fa fa-phone"></i> 400-123-4567</li>
+                    <li class="flex items-center gap-2"><i class="fa fa-envelope"></i> contact@elume.com</li>
+                    <li class="flex items-center gap-2"><i class="fa fa-map-marker"></i> 上海市浦东新区XX科技园</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-12 pt-8 border-t border-zinc-800 text-center text-gray-500">
+            © 2025 ELUME 光疗科技 版权所有
+        </div>
+    </div>
+</footer>
+
+<!-- JS脚本 -->
+<script>
+    // 导航栏滚动效果
+    window.addEventListener('scroll', function() {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('nav-scrolled');
+        } else {
+            navbar.classList.remove('nav-scrolled');
+        }
+    });
+</script>
+</body>
+</html>
